@@ -44,7 +44,7 @@ This project uses npm for package management. To set up the project:
    ```bash
    npm start
    ```
-2. **Access API endpoints:** Once the server is running, you can access the API endpoints using tools like Postman or curl. Refer to the documentation for specific endpoint details and usage examples. 
+2. **Access API endpoints:** Once the server is running, you can access the API endpoints using tools like Postman or curl. 
 
 ## Contact Information
 
