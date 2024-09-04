@@ -4,9 +4,11 @@ import { Request, Response, NextFunction } from 'express'
 
 const schema = z.object({
     name: z.string(),
-    adminEmail: z.string().email(),
+    adminEmail: z.string().email({message:"Invalid Email fromat"}),
     password: z.string().min(8).max(32)
 })
+
+export type zodType = z.infer<typeof schema>
 
 async function adminValidation(req: Request,res: Response,next: NextFunction):Promise<void>{
     const adminDetail = req.body;

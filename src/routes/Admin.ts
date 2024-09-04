@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import {Admin, Course} from "../database/database"; 
-import adminValidation from "../middleware/adminValidation";
+import adminValidation, { zodType } from "../middleware/adminValidation";
 import {Middleware} from "../middleware/Middleware"
 import {Hash} from '../crypto';
 import jwt from 'jsonwebtoken';
@@ -10,7 +10,7 @@ const router = Router();
 
 
 router.post('/signup',adminValidation,async(req: Request, res: Response):Promise<void>=>{
-    const {name, adminEmail, password} = req.body;
+    const {name, adminEmail, password}: zodType = req.body;
     const hashedPassword = Hash(password);
     const adminUser = new Admin({
         name: name,
